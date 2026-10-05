@@ -1,6 +1,7 @@
 import pandas as pd
 
-df = pd.read_csv("../data/student_performance.csv")
+# Load dataset
+df = pd.read_csv("data/students.csv")
 
 print("Original Shape:", df.shape)
 
@@ -15,4 +16,6 @@ for col in df.select_dtypes(include="number").columns:
 df = pd.get_dummies(df, drop_first=True)
 
 print("After Preprocessing:", df.shape)
+
+print("\nFirst 5 rows:")
 print(df.head())
